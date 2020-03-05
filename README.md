@@ -12,6 +12,8 @@
     可以发现频域信息（红色) 主要集中在10000以前。
 
 - 原文件为[eva.wav](eva.wav) （来自《Command and Conquer：Red Alert II》 声音曾经过处理）
+  
+  <audio><source src="eva.wav" type="audio/wav"></audio> 
 
 ## 噪声
 - 在频域信号上加入噪声。
@@ -21,6 +23,8 @@
 
 - 加入噪声后的文件为[evan.wav](evan.wav)
 
+<audio><source src="evan.wav" type="audio/wav"></audio>
+ 
 ## 滤波
 - 在频域上将10000以后的信号强度归零
      ![p3](filter.png)
@@ -29,3 +33,5 @@
     由于原信号在高频部分还是有信息的，这里将其与噪声一并滤除后使原信号产生了一定程度的失真，
 
 - 滤波后文件为[evaf.wav](evaf.wav)
+
+<audio><source src="evaf.wav" type="audio/wav"></audio> 
