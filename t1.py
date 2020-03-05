@@ -64,17 +64,17 @@ def main():
 
     freq,d,freqdata = getfreq(wavdata,nframes,framerate,0) # 获得频域信号
     # 滤波前波形绘制
-    plt.subplot(611)                                    
+    plt.subplot(421)                                    
     plt.plot(wavtime, wavdata[0],color = 'green')       #时域
-    plt.subplot(612)                                    
+    plt.subplot(422)                                    
     plt.plot(freq[:d-1],abs(freqdata[:d-1]),'r')        #频域
 
     freqdata_n = noiser(freq,d,freqdata)                #噪声加入！
     data_n = freq2time(nframes,freqdata_n)              #fft逆变换将噪声频域转时域
     # 噪声后波形绘制
-    plt.subplot(613)                                    
+    plt.subplot(423)                                    
     plt.plot(wavtime, data_n, color = 'green')          #噪声后时域
-    plt.subplot(614)                                    
+    plt.subplot(424)                                    
     plt.plot(freq[:d-1],abs(freqdata_n[:d-1]),'r')      #噪声后频域
 
     # 写入加入噪声的文件
@@ -83,9 +83,9 @@ def main():
     freqdata_f = filter(freq,d,freqdata)                #滤波
     data_f = freq2time(nframes,freqdata_f)              #fft逆变换转回时域
     # 滤波后波形绘制
-    plt.subplot(615)                                    
+    plt.subplot(413)                                    
     plt.plot(wavtime, data_f, color = 'green')          #滤波后时域
-    plt.subplot(616)                                    
+    plt.subplot(414)                                    
     plt.plot(freq[:d-1],abs(freqdata_f[:d-1]),'r')      #滤波后频域
 
     # 写入滤除噪声后的文件
